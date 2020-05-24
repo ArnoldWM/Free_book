@@ -14,9 +14,9 @@ public class PrimeNumbers {
             }
         }
         if (!Isprime)
-            System.out.println(" the number " + Number + " is a prime number.");
+            System.out.println(" The number " + Number + " is a prime number.");
         else
-            System.out.println(" the number " +Number + " is not a prime number.");
+            System.out.println(" The number " +Number + " is not a prime number.");
     }
 }
 
