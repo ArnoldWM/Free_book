@@ -5,9 +5,8 @@ public class NumberGuessing {
 
     public static void main(String[] args) {
 
-        Random rand = new Random();
         Scanner sc = new Scanner(System.in);
-        int theValue = rand.nextInt(100);
+        int theValue = (int) (Math.random() * 100) + 1;
 
 
         for (int i = 9; i > -1; i--) {
@@ -15,11 +14,21 @@ public class NumberGuessing {
                     "Try to guess it!");
             int guess = sc.nextInt();
             int guessesLeft = i;
-            if (guess == theValue){
+            if (guess == theValue) {
                 System.out.println("You guessed right!");
-            }else if (guess != theValue){
-                System.out.println("You have "+ guessesLeft+ " more guesses to make.");
+                i = -1;
+            } else {
+                System.out.println("You have " + guessesLeft + " more guesses to make.");
+                if (theValue > guess) {
+                    int close = guess - theValue;
+                    System.out.println("Your guess is " + close + " lower ");
+                } else if (theValue < guess) {
+                    int far = theValue + guess;
+                    System.out.println("Your guess is " + far + " higher ");
+                }
                 System.out.println("_______________________________________");
+                //System.out.println(theValue);
+
             }
 
 
